@@ -7,6 +7,8 @@ public class Colegio {
     private String dueno;
     private String nombre;
     private Boolean privado;
+    private Boolean calendarioB;
+    private Date fechaDeFundacion;
     private int numeroEstudiantes;
     private int numeroDeSalones;
     private int numeroDeMaterias;
@@ -16,6 +18,8 @@ public class Colegio {
             String dueno, 
             String nombre, 
             Boolean privado, 
+            Boolean calendarioB, 
+            Date fechaDeFundacion,
             int numeroEstudiantes, 
             int numeroDeSalones, 
             int numeroDeMaterias, 
@@ -23,6 +27,7 @@ public class Colegio {
         this.dueno = dueno;
         this.nombre = nombre;
         this.privado = privado;
+        this.calendarioB = calendarioB;
         this.numeroEstudiantes = numeroEstudiantes;
         this.numeroDeSalones = numeroDeSalones;
         this.numeroDeMaterias = numeroDeMaterias;
@@ -33,9 +38,10 @@ public class Colegio {
     
    
 
-    public void anadirEstudiantes(){
+    public void infoColegio(){
     this.numeroEstudiantes += 3;
-    this.privado = true;
+    this.privado = false;
+    this.calendarioB = true;
     }
     
     public String getDueno (){
@@ -56,7 +62,18 @@ public class Colegio {
     public void setPrivado(Boolean privado){
     this.privado = privado;
     }
-    
+    public Boolean getCalendarioB (){
+    return privado;
+    }
+    public void setCalendarioB(Boolean calendarioB){
+    this.privado = privado;
+    }
+    public Date getFechaDeFundacion(){
+    return fechaDeFundacion;
+    }
+    public void  setFechaDeFundacion( Date fechaDeFundacion){
+    this.fechaDeFundacion = fechaDeFundacion;
+    }
     public int getNumeroEstudiantes (){
     return numeroEstudiantes;
     }
@@ -82,19 +99,28 @@ public class Colegio {
     this.numeroDeProfesores = numeroDeProfesores;
     }
     public static void main (String[] args){
-        Colegio colegioTecnicoMariaElvinia = new Colegio("Claudia", 
+        Colegio colegio1 = new Colegio("Claudia", 
                 "Colegio Tecnico Maria Elvinia", 
                 true,
+                false,
+                new Date(),
                 368, 
                 22, 
                 13, 
                 24); 
-        System.out.println("La dueña del Colegio es " + colegioTecnicoMariaElvinia.getDueno());
-        System.out.println("el nombre del colegio es " + colegioTecnicoMariaElvinia.getNombre());
-        System.out.println("Hay " + colegioTecnicoMariaElvinia.getNumeroEstudiantes() + " estudiantes en el colegio");
-        System.out.println("Hay una cantidad de " + colegioTecnicoMariaElvinia.getNumeroDeSalones() + " salones en el colegio");
-        System.out.println("Se enseñan  " + colegioTecnicoMariaElvinia.getNumeroDeMaterias() + " materias en el colegio");
-        System.out.println("Colegio privado:  " + colegioTecnicoMariaElvinia.getPrivado());
+        System.out.println("La dueña del Colegio es " + colegio1.getDueno());
+        System.out.println("el nombre del colegio es " + colegio1.getNombre());
+        System.out.println("Hay " + colegio1.getNumeroEstudiantes() + " estudiantes en el colegio");
+        System.out.println("Hay una cantidad de " + colegio1.getNumeroDeSalones() + " salones en el colegio");
+        System.out.println("Se enseñan  " + colegio1.getNumeroDeMaterias() + " materias en el colegio");
+        System.out.println("Colegio privado:  " + colegio1.getPrivado());
+        System.out.println("El colegio es calendario A:  " + colegio1.getPrivado());
+        
+        colegio1.infoColegio();
+        
+        System.out.println("Hay " + colegio1.getNumeroEstudiantes() + " estudiantes en el colegio");
+        System.out.println("Colegio privado:  " + colegio1.getPrivado());
+        System.out.println("El colegio es calendario A:  " + colegio1.getPrivado());
 
     }
 }
